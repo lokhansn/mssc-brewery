@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Positive;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Data
@@ -16,8 +17,6 @@ import java.util.UUID;
 @Builder
 public class BeerDto {
 
-    // This doesn't make sense, but keeping it for now to complete the course
-    // Because for put request there would be a id value present in the request body instance
     @Null
     private UUID id;
 
@@ -29,4 +28,7 @@ public class BeerDto {
 
     @Positive
     private Long upc;
+
+    private OffsetDateTime createdDate;
+    private OffsetDateTime lastUpdatedDate;
 }
